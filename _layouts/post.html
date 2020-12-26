@@ -1,0 +1,106 @@
+---
+layout: default
+---
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-lg-offset-3 col-md-8 col-md-offset-2">
+                <div class="post-heading">
+                    <div class="Tags">
+                        {% for tag in page.tags %}
+                        <a class="tag" href="/tags/#{{ tag }}" title="{{ tag }}">{{ tag }}</a>
+                        {% endfor %}
+                    </div>
+                    <h1>{{ page.title }}</h1>
+                    {% if page.subtitle %}
+                    <h2 class="subheading">{{ page.subtitle }}</h2>
+                    {% endif %}
+                    <span class="meta">Posted on {{ page.date | date: "%Y-%m-%d" }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-lg-offset-3 col-md-8 col-md-offset-2 post-container">
+
+                {{ content }}
+
+                <hr>
+
+                <ul class="pager">
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">&larr; Previous Post</a>
+                    </li>
+                    {% endif %}
+                    {% if page.next.url %}
+                    <li class="next">
+                        <a href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">Next Post &rarr;</a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+
+
+
+
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: relative;
+            /*left: -0.75em;*/
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+<!-- Gitment 评论 -->
+
+
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; font-size: 15px;">
+    <div font-size: 17px;>加入「笨方法学写作」知识星球，这一次彻底学会写作。
+    </div>
+    <div >你将：
+    </div>
+    <div >⬇⬇⬇
+    </div>
+    <ul>
+        <li>1）习得钱钟书、纳博科夫等写作高手的卡片创作技法；</li>
+        <li>2）克服写作怕难痛，零基础新手轻松学会写作；</li>
+        <li>3）获得科学系统的写作指导，52 节课程，52 个习题；</li>
+        <li>4）掌握学习任意知识的有效方法论：笨方法；</li>
+        <li>5）遇见更优秀的人，享受被动进步的乐趣。</li>
+    </ul>
+    <div align="center"><img src="https://s2.ax1x.com/2019/09/24/uAnjsO.png"/>
+    </div> 
+</div>
+
+<!-- utteranc 评论 -->
+
+<script src="https://utteranc.es/client.js"
+        repo="cnfeat/cnfeat.github.io"
+        issue-term="pathname"
+        label="✨💬✨ "
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
+
+<!-- utteranc 评论 -->
